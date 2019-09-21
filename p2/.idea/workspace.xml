@@ -40,14 +40,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.q5">
-    <configuration name="q1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="q1" />
-      <module name="p2" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.q7">
     <configuration name="q2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="q2" />
       <module name="p2" />
@@ -69,8 +62,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="test2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="test2" />
+    <configuration name="q6" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="q6" />
+      <module name="p2" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="q7" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="q7" />
       <module name="p2" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -78,11 +78,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.q7" />
+        <item itemvalue="Application.q6" />
         <item itemvalue="Application.q5" />
         <item itemvalue="Application.q3" />
         <item itemvalue="Application.q2" />
-        <item itemvalue="Application.q1" />
-        <item itemvalue="Application.test2" />
       </list>
     </recent_temporary>
   </component>
@@ -98,7 +98,7 @@
       <updated>1568696228118</updated>
       <workItem from="1568696229899" duration="2212000" />
       <workItem from="1568891379014" duration="1985000" />
-      <workItem from="1569073237735" duration="7637000" />
+      <workItem from="1569073237735" duration="9509000" />
     </task>
     <servers />
   </component>
@@ -125,8 +125,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/q5.java</url>
-          <line>27</line>
+          <line>26</line>
           <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/q5.java</url>
+          <line>11</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
