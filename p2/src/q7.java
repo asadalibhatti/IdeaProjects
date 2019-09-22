@@ -23,7 +23,7 @@ class q7{
             obj.f();
         }
         catch (e1 e){
-            
+
 
         }
     }
