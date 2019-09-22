@@ -2,7 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c6bf6c5-3be1-47c9-91a3-b7b92f4bfd18" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Convert.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Labs +assignments done/Q2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Labs +assignments done/Q2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/p2/e1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/p2/i170312.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/p2/q1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/p2/q2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/p2/q3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/p2/q4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/p2/q5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/p2/q6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/p2/q7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/p2/q77.class" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,8 +33,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1Qwz1C4xdoqFfphfgvX9uoPHqz1" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -47,9 +62,9 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.q4">
-    <configuration name="q3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="q3" />
+  <component name="RunManager" selected="Application.Convert">
+    <configuration name="Convert" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Convert" />
       <module name="p2" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -85,11 +100,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Convert" />
         <item itemvalue="Application.q4" />
         <item itemvalue="Application.q7" />
         <item itemvalue="Application.q6" />
         <item itemvalue="Application.q5" />
-        <item itemvalue="Application.q3" />
       </list>
     </recent_temporary>
   </component>
@@ -107,6 +122,8 @@
       <workItem from="1568891379014" duration="1985000" />
       <workItem from="1569073237735" duration="10108000" />
       <workItem from="1569091281381" duration="2561000" />
+      <workItem from="1569140673947" duration="10217000" />
+      <workItem from="1569163264122" duration="7080000" />
     </task>
     <servers />
   </component>
@@ -118,41 +135,18 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/q1.java</url>
-          <line>5</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/q1.java</url>
-          <line>9</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/q3.java</url>
-          <line>27</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/q5.java</url>
-          <line>26</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/q5.java</url>
-          <line>11</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/p2$Convert.ic" NAME="Convert Coverage Results" MODIFIED="1569155278899" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

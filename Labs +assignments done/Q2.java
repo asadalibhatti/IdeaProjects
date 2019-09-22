@@ -1,40 +1,25 @@
-import java.*;
+import java.io.*;
 
-class DigitSum {
-    private int number;
-    private int Dsum;
-    public DigitSum(int n,int ds) { number=n;
-    Dsum=ds;
-    }
-    public int GetDigitSum() {
-        int Dsum=0;
-    while(number>0)
-    {int m = number % 10;
-        Dsum =Dsum + m;
-    number/=10;
-    }
-    return Dsum;
-    }
+public class q2 {
+    static int arr1[] = new int[]{2, 10, 4, -10, 6,10};
 
 
-}
-
-public class Q2 {
-    public static void main(String[]ar)
-    {
-        int ds=0;
-
-        DigitSum d1 =new DigitSum(801,ds);
-
-
-        int r=d1.GetDigitSum();
-
-        if(r %2 ==0 )
-        { System.out.println(r + " Is an Even number");
-        }else
-        { System.out.println(r + " Is an Odd number");
+    static boolean check() {
+        int res=0;
+        for (int i : arr1
+        ) {
+            if (i== 10) {
+                res+=i;
+            }
         }
+       if(res==30)
+           return true;
+       return false;
+    }
 
 
+
+    public static void main(String args[]) {
+        System.out.println(check());
     }
 }
