@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e6d485e4-434d-4454-b858-48c833b31f22" name="Default Changelist" comment="" />
+    <list default="true" id="e6d485e4-434d-4454-b858-48c833b31f22" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../ApLabTest/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ApLabTest/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ApLabTest/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ApLabTest/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ApLabTest/ApLabTest.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ApLabTest/src/i170312.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../p2/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../p2/src/q1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../p2/src/q2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../p2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../p2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../p2/out/production/p2/Convert.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../p2/out/production/p2/myExption.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../p2/p2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../p2/p2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../p2/src/Convert.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../p2/src/test.java" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,6 +175,8 @@
       <workItem from="1568695816167" duration="324000" />
       <workItem from="1569139416403" duration="839000" />
       <workItem from="1569140514662" duration="66000" />
+      <workItem from="1569482814315" duration="634000" />
+      <workItem from="1569483744525" duration="2518000" />
     </task>
     <servers />
   </component>
