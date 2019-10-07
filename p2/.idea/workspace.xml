@@ -2,15 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c6bf6c5-3be1-47c9-91a3-b7b92f4bfd18" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/q1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/q2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/i170312.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/task2v1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BismILLAH/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../BismILLAH/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/p2/Convert.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/p2/myExption.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/p2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/p2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Convert.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/p2/q.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/q1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/q2.java" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,6 +37,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -44,7 +45,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
@@ -63,9 +64,16 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.q">
+  <component name="RunManager" selected="Application.i170312">
     <configuration name="Convert" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Convert" />
+      <module name="p2" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="i170312" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="i170312" />
       <module name="p2" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -78,22 +86,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="q4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="q4" />
+    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test" />
       <module name="p2" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="q6" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="q6" />
-      <module name="p2" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="q7" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="q7" />
+    <configuration name="test2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test2" />
       <module name="p2" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -101,11 +102,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.i170312" />
+        <item itemvalue="Application.test2" />
+        <item itemvalue="Application.test" />
         <item itemvalue="Application.q" />
         <item itemvalue="Application.Convert" />
-        <item itemvalue="Application.q4" />
-        <item itemvalue="Application.q7" />
-        <item itemvalue="Application.q6" />
       </list>
     </recent_temporary>
   </component>
@@ -126,6 +127,18 @@
       <workItem from="1569140673947" duration="10217000" />
       <workItem from="1569163264122" duration="7080000" />
       <workItem from="1569308404639" duration="16820000" />
+      <workItem from="1570035247627" duration="2522000" />
+      <workItem from="1570038453520" duration="3007000" />
+      <workItem from="1570353276086" duration="333000" />
+      <workItem from="1570354517361" duration="2023000" />
+      <workItem from="1570356962932" duration="621000" />
+      <workItem from="1570358042049" duration="391000" />
+      <workItem from="1570358536923" duration="194000" />
+      <workItem from="1570358840142" duration="288000" />
+      <workItem from="1570359185172" duration="492000" />
+      <workItem from="1570359699476" duration="8933000" />
+      <workItem from="1570381118583" duration="5927000" />
+      <workItem from="1570431257825" duration="2470000" />
     </task>
     <servers />
   </component>
@@ -165,6 +178,16 @@
           <url>file://$PROJECT_DIR$/src/q.java</url>
           <line>59</line>
           <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/i170312.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
