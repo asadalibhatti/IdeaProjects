@@ -1,0 +1,75 @@
+# SONGS
+The Girl is Mine
+C:\1.mp3
+1
+Billie Jean
+C:\2.mp3
+2
+P.Y.T. (Pretty Young Thing)
+C:\3.mp3
+3
+Blue Bossa
+C:\4.mp3
+1
+The Lion Sleeps Tonight
+C:\5.mp3
+2
+I Surrender
+C:\6.mp3
+2
+Play that Funky Music
+C:\7.mp3
+1
+Go West
+C:\8.mp3
+7
+Mystery Track of Mystery
+C:\9.mp3
+10
+# ARTISTS
+Michael Jackson
+Joe Henderson
+The Tokens
+Celine Dion
+Wild Cherry
+Pet Shop Boys
+Tom Hazelton
+# ALBUMS
+Thriller
+Tom's Favourite Tunes
+Classics
+# SONG-ALBUM PAIRS
+C:\1.mp3
+Thriller
+C:\2.mp3
+Thriller
+C:\3.mp3
+Thriller
+C:\4.mp3
+Tom's Favourite Tunes
+C:\5.mp3
+Tom's Favourite Tunes
+C:\6.mp3
+Classics
+# SONG-ARTIST PAIRS
+C:\1.mp3
+Michael Jackson
+C:\2.mp3
+Michael Jackson
+C:\3.mp3
+Michael Jackson
+C:\4.mp3
+Joe Henderson
+C:\5.mp3
+The Tokens
+C:\5.mp3
+Tom Hazelton
+C:\6.mp3
+Celine Dion
+C:\7.mp3
+Wild Cherry
+C:\8.mp3
+Pet Shop Boys
+C:\8.mp3
+Tom Hazelton
+# EOF
