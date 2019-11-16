@@ -30,7 +30,7 @@ public class SimpleTextInterface {
 		while ((n != 0)) {
 
 
-			System.out.println("1 to View a list of all the songs in the library and see information about each song");
+			System.out.println("\n\n1 to View a list of all the songs in the library and see information about each song");
 			System.out.println("2 to View a list of all the artists in the library");
 			System.out.println("3 to View a list of all the albums in the library.");
 			System.out.println("4 to Edit any information in the library.");

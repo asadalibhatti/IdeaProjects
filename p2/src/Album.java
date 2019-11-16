@@ -2,12 +2,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Album {
+    int id;
      String title;
     //songList should have songs in order of trackNumbmers
     private List<Song> songList;
 
     public Album(String title) {
         this.title = title;
+        this.songList =new ArrayList<>();
+    }
+
+    public Album(String title,int id) {
+        this.title = title;
+        this.id=id;
         this.songList =new ArrayList<>();
     }
 

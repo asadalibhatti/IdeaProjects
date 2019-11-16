@@ -2,12 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c6bf6c5-3be1-47c9-91a3-b7b92f4bfd18" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/mp3Data.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/i170312.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_18.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mp3Data.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../testjava/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../testjava/.idea/libraries/mysql_connector_java_8_0_18.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../testjava/.idea/libraries/mysql_mysql_connector_java_8_0_18.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../testjava/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../testjava/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../testjava/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../testjava/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../testjava/src/DBCreation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../testjava/src/TestDB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../testjava/src/c.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../testjava/testjava.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BismILLAH/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../BismILLAH/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BismILLAH/out/production/BismILLAH/HelloWorld.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/p2/Album.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/p2/Album.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/p2/Artist.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/p2/Artist.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/p2/Library.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/p2/Library.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/p2/SimpleTextInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/p2/SimpleTextInterface.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/p2/Song.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/p2/Song.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/p2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/p2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Album.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Album.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Artist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Artist.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Library.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SimpleTextInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SimpleTextInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Song.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Song.java" afterDir="false" />
@@ -48,14 +66,18 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/mysql-connector-java-8.0.18/mysql-connector-java-8.0.18.jar!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -154,7 +176,16 @@
       <workItem from="1570381118583" duration="5927000" />
       <workItem from="1570431257825" duration="27380000" />
       <workItem from="1570605534088" duration="3481000" />
-      <workItem from="1570610292536" duration="28933000" />
+      <workItem from="1570610292536" duration="29934000" />
+      <workItem from="1571064059837" duration="226000" />
+      <workItem from="1572332444528" duration="453000" />
+      <workItem from="1572684731766" duration="23246000" />
+      <workItem from="1572951820132" duration="897000" />
+      <workItem from="1573122561470" duration="4641000" />
+      <workItem from="1573293833796" duration="3478000" />
+      <workItem from="1573307035335" duration="407000" />
+      <workItem from="1573314523630" duration="48825000" />
+      <workItem from="1573566988712" duration="2475000" />
     </task>
     <servers />
   </component>
@@ -202,8 +233,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Library.java</url>
-          <line>105</line>
-          <option name="timeStamp" value="60" />
+          <line>444</line>
+          <option name="timeStamp" value="68" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

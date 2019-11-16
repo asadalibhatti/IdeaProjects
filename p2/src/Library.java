@@ -1,16 +1,27 @@
+import com.sun.org.apache.xml.internal.resolver.readers.ExtendedXMLCatalogReader;
+
 import java.io.*;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 import java.util.Scanner;
 
 public class Library {
+    Connection conn;
     private static int trackingId;
     List<Artist> artistList;
     private List<Album> albumList;
 
     public Library() {
+        try {
+            conn = getConnection();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
         this.artistList = new ArrayList<Artist>();
         this.albumList = new ArrayList<Album>();
+        trackingId=0;
     }
 
     public Library(List<Artist> artistList, List<Album> albumList) {
@@ -32,26 +43,46 @@ public class Library {
             }
 
             if (!found) {//artist not found. adding to artist list
+                String q = "insert into Artist (name) values (" + s.artistList.get(i).getName() + ")";
                 artistList.add(s.artistList.get(i));
+                executeUpdate(q);
             }
         }
     }
-    void editSongName(String oldName,String newName){
+
+    void editSongName(String oldName, String newName) {
         List<Song> songList = getAllSongs();
         for (Song s1 : songList) {
             if (s1.title.equals(oldName)) {
-                s1.title=newName;
+                s1.title = newName;
+                String q="update songs set title = "+newName+" where id="+s1.trackNumber;
+                executeUpdate(q);
             }
         }
     }
-    void editSongPath(String oldName,String newName){
+
+    //    void insertInto(String query){
+//        try{
+//        Statement s=conn.createStatement();
+//        s.executeQuery(query);
+//        System.out.println("Inserted Succesfully");
+//
+//        }
+//        catch (Exception e){
+//            System.out.println(e.getMessage());
+//        }
+//    }
+    void editSongPath(String oldName, String newName) {
         List<Song> songList = getAllSongs();
         for (Song s1 : songList) {
             if (s1.title.equals(oldName)) {
-                s1.path=newName;
+                s1.path = newName;
+                String q="update songs set pathh = "+newName+" where id="+s1.trackNumber;
+                executeUpdate(q);
             }
         }
     }
+
     boolean alreadyPresent(Song s) {//will check song path,title already present or not
         List<Song> songList = getAllSongs();
         for (Song s1 : songList) {
@@ -62,6 +93,28 @@ public class Library {
         return false;
 
     }
+
+    public Connection getConnection() throws SQLException {
+        final String userName = "root";
+        final String password = "asadbhatti";
+        final String serverName = "localhost";
+        final int portNumber = 3306;
+        final String dbName = "university";
+        // final String tableName = "MYMusic";
+
+        //Statement stmt;
+        Connection conn = null;
+        Properties connectionProps = new Properties();
+        connectionProps.put("user", userName);
+        connectionProps.put("password", password);
+        System.out.println("trying to get connection!! ");
+        conn = DriverManager.getConnection("jdbc:mysql://"
+                + serverName + ":" + portNumber + "/"
+                + dbName, connectionProps);
+        System.out.println(" Connection achieved!! ");
+        return conn;
+    }
+
     boolean alreadyPresent(String name, String path) {//will check song path,title already present or not
         List<Song> songList = getAllSongs();
         for (Song s1 : songList) {
@@ -72,85 +125,181 @@ public class Library {
         return false;
 
     }
-    void loadMp3State() {
+
+    public boolean executeUpdate(String command) {
+        Statement stmt = null;
         try {
-            File file = new File("mp3Data.txt");
+            stmt = conn.createStatement();
+            stmt.executeUpdate(command); // This will throw a SQLException if it fails
+            return true;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        } finally {
 
-            BufferedReader br = new BufferedReader(new FileReader(file));
-            Song s=new Song();
-            String st;int c=0;
-            while ((st = br.readLine()) != null) {
-                if (st.equals("eof")) {
-                    break;
+            // This will run whether we throw an exception or not
+            if (stmt != null) {
+                try {
+                    stmt.close();
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
                 }
-                else if (st.equals("#")) {
-                    c = 0;
-                } else if (c == 0 || c == 2) {
-                    c++;
-                } else if (c == 1) {
-                    albumList.add(new Album(st));
-                    c++;
-                } else if (c == 3) {
-                    s.title = st;
-                    c++;
-                } else if (c == 4) {
-                    s.path = st;
-                    c++;
-                } else if (c == 5) {
-                    s.duration = Integer.parseInt(st);
-                    c++;
-                } else if (c == 6) {
-                    s.trackNumber = Integer.parseInt(st);
-                    c++;
-                } else if (c > 6 && !st.equals("--")) {
-                    if (st.equals("+")) {
-                        c++;
-                    } else {
-                        Artist a=new Artist(st);
-                        s.artistList.add(a);
-                        if(!artistPresent(a.getName())){
-                            artistList.add(a);
-                        }
+            }
+        }
+        return true;
+    }
 
-                        c++;
-                    }
-                } else if (st.equals("--")) {
-                    addSong(s,albumList.get(albumList.size() - 1).getTitle());
+    void loadMp3State() {
 
-                    s=new Song();
-                    c = 3;
-                }
+        Statement stmt = null;
+        try {
+            stmt = conn.createStatement();
+            String sql = "SELECT * FROM artists";
+            ResultSet rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+                // int id = rs.getInt("ID");
+                String name = rs.getString("name");
+                Artist a = new Artist(name);
+                artistList.add(a);
             }
 
 
-            System.out.println("Mp3 Loaded Succesfulty\n");
-        }
-        catch (IOException e) {
-            System.out.println("An error occurred.");
+            sql = "SELECT * FROM Albums";
+            rs = stmt.executeQuery(sql);
+            while (rs.next()) {
+                 int id = rs.getInt("ID");
+                String title = rs.getString("title");
+                Album a = new Album(title,id);
+                albumList.add(a);
+            }
+
+
+            sql = "SELECT * FROM songs";
+            rs = stmt.executeQuery(sql);
+            ArrayList<Artist> artistsList=new ArrayList<>();
+            while (rs.next()) {
+                int id = rs.getInt("ID");
+                String name = rs.getString("title");
+                String path = rs.getString("pathh");
+                int duration = rs.getInt("duration");
+
+                Song s = new Song();
+                s.trackNumber = id;
+                trackingId = id + 1;
+                s.duration = duration;
+                s.path = path;
+                s.title = name;
+
+                String q = "select * from songartist where sid=" + s.trackNumber;
+                ResultSet rs2 = stmt.executeQuery(q);
+                artistsList.clear();
+                while (rs.next()) {
+                    int sid = rs2.getInt("sid");
+                    int aid = rs2.getInt("aid");
+
+                    q = "select name from artists where id=" + id;
+                    ResultSet rs1 = stmt.executeQuery(q);
+                    String name1 = rs1.getString("name");
+                    artistsList.add(new Artist(name1, id));
+                }
+                // s.artistList=getArtistListd(id);
+                s.artistList = artistList;
+
+
+                //Album a=getSongAlubumUsingTitle(s.title);
+                 q = "select * from albumsong where sid=" + s.trackNumber;
+                 rs2 = stmt.executeQuery(q);
+                Album a;
+                while (rs.next()) {
+                    int sid = rs2.getInt("sid");
+                    int aid = rs2.getInt("aid");
+
+                    q = "select name from albums where id=" + aid;
+                    ResultSet rs1 = stmt.executeQuery(q);
+                    String name1 = rs1.getString("title");
+
+
+                    addSong(s,name1);
+                }
+
+
+
+            }
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
             e.printStackTrace();
         }
+
+
+//            String st;
+//            int c = 0;
+//            while ((st = br.readLine()) != null) {
+//                if (st.equals("eof")) {
+//                    break;
+//                } else if (st.equals("#")) {
+//                    c = 0;
+//                } else if (c == 0 || c == 2) {
+//                    c++;
+//                } else if (c == 1) {
+//                    albumList.add(new Album(st));
+//                    c++;
+//                } else if (c == 3) {
+//                    s.title = st;
+//                    c++;
+//                } else if (c == 4) {
+//                    s.path = st;
+//                    c++;
+//                } else if (c == 5) {
+//                    s.duration = Integer.parseInt(st);
+//                    c++;
+//                } else if (c == 6) {
+//                    s.trackNumber = Integer.parseInt(st);
+//                    c++;
+//                } else if (c > 6 && !st.equals("--")) {
+//                    if (st.equals("+")) {
+//                        c++;
+//                    } else {
+//                        Artist a = new Artist(st);
+//                        s.artistList.add(a);
+//                        if (!artistPresent(a.getName())) {
+//                            artistList.add(a);
+//                        }
+//
+//                        c++;
+//                    }
+//                } else if (st.equals("--")) {
+//                    addSong(s, albumList.get(albumList.size() - 1).getTitle());
+//
+//                    s = new Song();
+//                    c = 3;
+//                }
+//            }
+
+
+        System.out.println("Mp3 Loaded Succesfulty\n");
+
     }
+
+
     void saveCurrentSateToFile() {
         try {
 
             FileWriter myWriter = new FileWriter("mp3Data.txt");
             //#albums
-            for(Album a: albumList){
+            for (Album a : albumList) {
                 myWriter.write("Album_n:\n");
-                myWriter.write(a.title+"\n");
+                myWriter.write(a.title + "\n");
                 myWriter.write("SongList:\n");
-                List<Song> songList=getSongFromAlbum(a.getTitle());
-                for(Song s: songList){
-                    myWriter.write(s.title+"\n");
-                    myWriter.write(s.path+"\n");
-                    myWriter.write(s.duration+"\n");
-                    myWriter.write(s.trackNumber+"\n");
+                List<Song> songList = getSongFromAlbum(a.getTitle());
+                for (Song s : songList) {
+                    myWriter.write(s.title + "\n");
+                    myWriter.write(s.path + "\n");
+                    myWriter.write(s.duration + "\n");
+                    myWriter.write(s.trackNumber + "\n");
                     for (int i = 0; i < s.artistList.size(); i++) {
-                        myWriter.write(s.artistList.get(i).getName() );
-                        if(i+1<s.artistList.size()){
+                        myWriter.write(s.artistList.get(i).getName());
+                        if (i + 1 < s.artistList.size()) {
                             myWriter.write("\n+\n");
-                        }
-                        else
+                        } else
                             myWriter.write('\n');
                     }
 
@@ -160,9 +309,8 @@ public class Library {
             }
 
 
-
             myWriter.write("eof\n");
-        myWriter.close();
+            myWriter.close();
             System.out.println("Current MP3 state saved succesfully\n\n");
         } catch (IOException e) {
             System.out.println("An error occurred.");
@@ -171,6 +319,7 @@ public class Library {
         // e.printStackTrace();
         //}
     }
+
     boolean albumPresent(String a) {
         for (Album albm : albumList) {
             if (albm.title.equals(a)) {
@@ -193,18 +342,19 @@ public class Library {
         }
         return null;
     }
-    void playit(List<Song> songList){
+
+    void playit(List<Song> songList) {
         System.out.println("Enter Title of Song to Play or 00 to go back : ");
         Scanner input = new Scanner(System.in);
         //System.out.println("Enter Your Choice : ");
         String title = input.nextLine();
-        boolean found =false;
-        if(title.equals("00")){
+        boolean found = false;
+        if (title.equals("00")) {
             return;
         }
         for (Song s : songList) {
             if (s.title.equals(title)) {
-                found=true;
+                found = true;
                 MP3 playerMP3 = new MP3(s.path);
                 playerMP3.play();
                 while (true) {
@@ -227,11 +377,12 @@ public class Library {
                 break;
             }
         }
-        if(!found){
+        if (!found) {
             System.out.println("Song Not found");
         }
 
     }
+
     void addSong(Song s) {//defaulut album
         if (!alreadyPresent(s)) {
 
@@ -242,8 +393,10 @@ public class Library {
                 addAlbum("Default");
             }
             Album a = findAlbum("Default");
-            s.trackNumber=trackingId;
+            s.trackNumber = trackingId;
             a.addSong(s);
+            String q="insert into songs (title,pathh,duration) values('"+ s.title+"','"+s.path+"',"+s.duration+")";
+            executeUpdate(q);
             trackingId++;
         } else
             System.out.println(s.title + " : song not added ,this title or path already present");
@@ -259,23 +412,39 @@ public class Library {
                 addAlbum(albumTitle);
             }
             Album a = findAlbum(albumTitle);
-            s.trackNumber=trackingId;
+            s.trackNumber = trackingId;
             a.addSong(s);
+            String q="insert into songs (title,pathh,duration) values('"+ s.title+"','"+s.path+"',"+s.duration+")";
+            executeUpdate(q);
             trackingId++;
         } else
             System.out.println(s.title + " : song not added ,this title or path already present");
     }
 
-    void viewSongWithTitle(String title){
+    void viewSongWithTitle(String title) {
         printThisSongInfo(getSongWithTitle(title));
 
     }
+
     Song getSongWithTitle(String title) {
         for (Album albm : albumList) {
 
             for (Song s : albm.getSongList()) {
                 if (s.title.equals(title)) {
                     return s;
+                }
+            }
+
+        }
+        System.out.println("Song not found with title : " + title);
+        return null;
+    }
+    Album getSongAlubumUsingTitle(String title) {
+        for (Album albm : albumList) {
+
+            for (Song s : albm.getSongList()) {
+                if (s.title.equals(title)) {
+                    return albm;
                 }
             }
 
@@ -326,13 +495,15 @@ public class Library {
         System.out.println("Song with artist not found : ");
         return null;
     }
-    boolean artistPresent(String name){
-        for(Artist a1: artistList){
-            if(a1.getName().equals(name))
+
+    boolean artistPresent(String name) {
+        for (Artist a1 : artistList) {
+            if (a1.getName().equals(name))
                 return true;
         }
         return false;
     }
+
     void viewSongByArtist(Artist a) {
         if (artistPresent(a.getName())) {
             System.out.println("\n\nShowing All Songs of " + a.getName());
@@ -356,22 +527,24 @@ public class Library {
 
                 }
             }
-        }
-        else
+        } else
             System.out.println("Artist not present");
     }
-    void addArtistToSong(Song s1,Artist a){
-        Song s=getSongWithTitle(s1.title);
+
+    void addArtistToSong(Song s1, Artist a) {
+        Song s = getSongWithTitle(s1.title);
         artistList.add(a);
         s.artistList.add(a);
-        System.out.println("Artist added to song "+ s1.title);
+        System.out.println("Artist added to song " + s1.title);
     }
-    void viewSongFromAlbum(Album a){
-        List<Song> songList=getSongFromAlbum(a.title);
-        for(Song s: songList){
+
+    void viewSongFromAlbum(Album a) {
+        List<Song> songList = getSongFromAlbum(a.title);
+        for (Song s : songList) {
             printThisSongInfo(s);
         }
     }
+
     List<Song> getSongFromAlbum(String albumTitle) {
         for (Album albm : albumList) {
             if (albm.title.equals(albumTitle)) {
@@ -400,7 +573,7 @@ public class Library {
         }
     }
 
-    void printThisSongInfo(Song s){
+    void printThisSongInfo(Song s) {
         System.out.print(s.title + "  __ ");
         for (int i = 0; i < s.artistList.size(); i++) {
             System.out.print(s.artistList.get(i).getName());
@@ -409,7 +582,7 @@ public class Library {
 
             }
         }
-        System.out.println(" __ " + s.path+ " __ "+s.duration+ " __ "+s.trackNumber);
+        System.out.println(" __ " + s.path + " __ " + s.duration + " __ " + s.trackNumber);
     }
 
     void viewAllSongs() {
@@ -422,7 +595,7 @@ public class Library {
                 System.out.println("NO songs to show in this album");
             }
             for (Song s : albumSongsList) {
-               printThisSongInfo(s);
+                printThisSongInfo(s);
             }
         }
 
@@ -437,7 +610,16 @@ public class Library {
             for (Song s1 : albm.getSongList()) {
                 if (s1.title.equals(s.title)) {
                     albm.removeSong(s1);
-                    System.out.println(s1.title+" : song removed from Album "+ albm.title);
+                    System.out.println(s1.title + " : song removed from Album " + albm.title);
+
+                    String q= "delete from albumsong where sid ="+ s1.trackNumber;
+                    executeUpdate(q);
+
+                    q= "delete from songartist where sid ="+ s1.trackNumber;
+                    executeUpdate(q);
+
+                     q= "delete from songs where id ="+ s1.trackNumber;
+                    executeUpdate(q);
                     return;
                 }
             }
@@ -470,6 +652,19 @@ public class Library {
         for (Artist a1 : artistList) {
             if (a1.getName().equals(a.getName())) {
                 artistList.remove(a1);
+
+                String q= "delete from albumsong where aid ="+ a1.getMobileNo();
+                executeUpdate(q);
+
+                q= "delete from songartist where sid ="+  a1.getMobileNo();
+                executeUpdate(q);
+
+                q= "delete from artists where id ="+  a1.getMobileNo();
+                executeUpdate(q);
+
+
+                 q= "delete from artists where id ="+ a1.getMobileNo();
+                executeUpdate(q);
                 return;
             }
         }
@@ -486,6 +681,8 @@ public class Library {
 
     void addArtist(Artist a) {
         artistList.add(a);
+        String q= "insert into artists (id,name) values("+ a.getMobileNo()+",'"+a.getName()+"')";
+        executeUpdate(q);
     }
     //void editSongName(old,new)
 }

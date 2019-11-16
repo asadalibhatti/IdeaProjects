@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e6d485e4-434d-4454-b858-48c833b31f22" name="Default Changelist" comment="" />
+    <list default="true" id="e6d485e4-434d-4454-b858-48c833b31f22" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../p2/src/mp3Data.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BismILLAH/HelloWorld.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../p2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../p2/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +71,9 @@
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Asad Ali Bhatti\IdeaProjects\BismILLAH\out" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -161,6 +169,8 @@
       <workItem from="1569482814315" duration="634000" />
       <workItem from="1569483744525" duration="2518000" />
       <workItem from="1570034770774" duration="351000" />
+      <workItem from="1571064340799" duration="159000" />
+      <workItem from="1571064604384" duration="81000" />
     </task>
     <servers />
   </component>
@@ -221,6 +231,11 @@
           <url>file://$PROJECT_DIR$/src/main.java</url>
           <line>168</line>
           <option name="timeStamp" value="49" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/out/HelloWorld.class</url>
+          <line>5</line>
+          <option name="timeStamp" value="50" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -21,6 +21,7 @@ public class Song {
     }
     public Song() {
 
+
         this.artistList= new ArrayList<>();
     }
 

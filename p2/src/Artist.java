@@ -1,16 +1,21 @@
 public class Artist {
     private String name;
-    private int mobileNo;
+    private int id;
     private String companyAddress;
 
     public Artist(String name) {
         this.name = name;
-        mobileNo = 0;
+        id = 0;
+        companyAddress = null;
+    }
+    public Artist(String name, int id) {
+        this.name = name;
+        this.id = id;
         companyAddress = null;
     }
     public Artist(String name, int mobileNo, String companyAddress) {
         this.name = name;
-        this.mobileNo = mobileNo;
+        this.id = mobileNo;
         this.companyAddress = companyAddress;
     }
 
@@ -23,11 +28,11 @@ public class Artist {
     }
 
     public float getMobileNo() {
-        return mobileNo;
+        return id;
     }
 
     public void setMobileNo(int mobileNo) {
-        this.mobileNo = mobileNo;
+        this.id = mobileNo;
     }
 
     public String getCompanyAddress() {
